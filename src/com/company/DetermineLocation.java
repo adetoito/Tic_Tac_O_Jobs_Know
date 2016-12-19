@@ -2,34 +2,18 @@ package com.company;
 
 public class DetermineLocation {
 
-    public DetermineLocation () {}
+    /*
+    This class is used mainly for organization.
+     */
 
-    public int findLocation (int r, int c) {
+    public static int findLocation (int c) {
         int location;
-        if (r == 1) {
-            if (c == 1) {
-                location = 1;
-            } else if (c == 2) {
-                location = 2;
-            } else {
-                location = 3;
-            }
-        } else if (r == 2) {
-            if (c == 1) {
-                location = 4;
-            } else if (c == 2) {
-                location = 5;
-            } else {
-                location = 6;
-            }
+        if (c == 1) {
+            location = 0;
+        } else if (c == 2) {
+            location = 1;
         } else {
-            if (c == 1) {
-                location = 7;
-            } else if (c == 2) {
-                location = 8;
-            } else {
-                location = 9;
-            }
+            location = 2;
         }
         return location;
     }
