@@ -48,6 +48,8 @@ public class Main {
 
         if (mode == 1) {
             PvP.beginGame(yourTurn);
+        } else {
+            PvC.beginGame(yourTurn);
         }
     }
 }

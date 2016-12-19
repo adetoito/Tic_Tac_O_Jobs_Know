@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class PvP {
+public class PvC {
 
     public static void beginGame (boolean order) {
         Scanner sc = new Scanner(System.in);
