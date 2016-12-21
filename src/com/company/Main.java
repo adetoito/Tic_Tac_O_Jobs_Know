@@ -8,7 +8,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to Tic Tac O Jobs Know!\n");
-        unnecessaryMusic.totallyUnnecessaryMusicPlayingInTheBackgroundBecauseIFeltLikeIt(); // Was bored
 
         boolean yourTurn = true; boolean action = true;
         int mode = 0;
