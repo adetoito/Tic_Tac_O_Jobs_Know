@@ -2,7 +2,7 @@ package com.company;
 
 public class Match {
 
-    public static int isMatching (String [] row1, String [] row2, String [] row3) {
+    public static int isMatching (String [][] board) {
         /*
         REFERENCE:
 
@@ -19,54 +19,54 @@ public class Match {
         int match = 0;
 
         for (int i = 0; i <= 2; i++) { //1
-            if (row1[i].equals(row2[i]) && row2[i].equals(row3[i])) {
-                if (row1[i].equals("X")) {
+            if (board[0][i].equals(board[1][i]) && board[1][i].equals(board[2][i])) {
+                if (board[0][i].equals("X")) {
                     match = 1;
-                } else if (row1[i].equals("O")) {
+                } else if (board[0][i].equals("O")) {
                     match = 2;
                 }
                 break;
             }
         }
         if (match == 0) { //2
-            if (row1[0].equals(row1[1]) && row1[1].equals(row1[2])) {
-                if (row1[0].equals("X")) {
+            if (board[0][0].equals(board[0][1]) && board[0][1].equals(board[0][2])) {
+                if (board[0][0].equals("X")) {
                     match = 1;
-                } else if (row1[0].equals("O")) {
+                } else if (board[0][0].equals("O")) {
                     match = 2;
                 }
             }
-            if (row2[0].equals(row2[1]) && row2[1].equals(row2[2])) {
-                if (row2[0].equals("X")) {
+            if (board[1][0].equals(board[1][1]) && board[1][1].equals(board[1][2])) {
+                if (board[1][0].equals("X")) {
                     match = 1;
-                } else if (row2[0].equals("O")) {
+                } else if (board[1][0].equals("O")) {
                     match = 2;
                 }
             }
-            if (row3[0].equals(row3[1]) && row3[1].equals(row3[2])) {
-                if (row3[0].equals("X")) {
+            if (board[2][0].equals(board[2][1]) && board[2][1].equals(board[2][2])) {
+                if (board[2][0].equals("X")) {
                     match = 1;
-                } else if (row3[0].equals("O")) {
+                } else if (board[2][0].equals("O")) {
                     match = 2;
                 }
             }
         }
 
         if (match == 0) { //3
-            if (row1[0].equals(row2[1]) && row2[1].equals(row3[2])) {
-                if (row1[0].equals("X")) {
+            if (board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2])) {
+                if (board[0][0].equals("X")) {
                     match = 1;
-                } else if (row1[0].equals("O")) {
+                } else if (board[0][0].equals("O")) {
                     match = 2;
                 }
             }
         }
 
         if (match == 0) { //4
-            if (row3[0].equals(row2[1]) && row2[1].equals(row1[2])) {
-                if (row3[0].equals("X")) {
+            if (board[2][0].equals(board[1][1]) && board[1][1].equals(board[0][2])) {
+                if (board[2][0].equals("X")) {
                     match = 1;
-                } else if (row3[0].equals("O")) {
+                } else if (board[2][0].equals("O")) {
                     match = 2;
                 }
             }

@@ -10,7 +10,8 @@ public class PvP {
         int row = 1; int column = 1;
         String symbol;
 
-        String [] row1 = {"-", "-", "-"}; String [] row2 = {"-", "-", "-"}; String [] row3 = {"-", "-", "-"};
+        // String [] row1 = {"-", "-", "-"}; String [] row2 = {"-", "-", "-"}; String [] row3 = {"-", "-", "-"};
+        String [][] board = {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}};
 
         while (looping) {
             if (order) {
@@ -19,16 +20,16 @@ public class PvP {
                 symbol = "O";
             }
 
-            System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-            System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-            System.out.println(row3[0] + " " + row3[1] + " " + row3[2] + "\n");
+            System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+            System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+            System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
             boolean action = true;
             while (action) {
                 System.out.println("What row would you like to place your symbol?");
                 try {
-                    row = sc.nextInt();
-                    if (row >= 1 && row <= 3) {
+                    row = sc.nextInt() - 1;
+                    if (row >= 0 && row <= 2) {
                         action = false;
                     } else {
                         System.out.println("Number inputted is either lower than 1 or higher than 3.");
@@ -42,8 +43,8 @@ public class PvP {
             while (action) {
                 System.out.println("What column would you like to place your symbol?");
                 try {
-                    column = sc.nextInt();
-                    if (column >= 1 && column <= 3) {
+                    column = sc.nextInt() - 1;
+                    if (column >= 0 && column <= 2) {
                         action = false;
                     } else {
                         System.out.println("Number inputted is either lower than 1 or higher than 3.");
@@ -54,6 +55,7 @@ public class PvP {
                 }
             }
 
+            /*
             if (row == 1) {
                 row1[DetermineLocation.findLocation(column)] = symbol;
             } else if (row == 2) {
@@ -61,23 +63,25 @@ public class PvP {
             } else {
                 row3[DetermineLocation.findLocation(column)] = symbol;
             }
+            */
+            board[row][column] = symbol;
 
-            int hasMatch = Match.isMatching(row1, row2, row3); // INT TO DETERMINE WINNER (0 = no match, 1 = P1 win, 2 = P2 win)
+            int hasMatch = Match.isMatching(board); // INT TO DETERMINE WINNER (0 = no match, 1 = P1 win, 2 = P2 win)
 
             if (hasMatch == 1) {
                 System.out.println("Player 1 wins!");
 
-                System.out.println("\n" + row1[0] + " " + row1[1] + " " + row1[2]);
-                System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+                System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+                System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
             } else if (hasMatch == 2) {
                 System.out.println("Player 2 wins!");
 
-                System.out.println("\n" + row1[0] + " " + row1[1] + " " + row1[2]);
-                System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+                System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+                System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
             } else {
