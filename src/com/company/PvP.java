@@ -66,9 +66,18 @@ public class PvP {
             */
             board[row][column] = symbol;
 
-            int hasMatch = Match.isMatching(board); // INT TO DETERMINE WINNER (0 = no match, 1 = P1 win, 2 = P2 win)
+            int hasMatch = Match.isMatching(board); // INT TO DETERMINE WINNER (0 = no match, 1 = P1 win, 2 = P2 win, 3 = Tie)
 
-            if (hasMatch == 1) {
+            int tie = 0;
+            for (int i = 0; i < board.length; i++) {
+                for (int j = 0; j < board[0].length; j++) {
+                    if (board[i][j].equals("-")) {
+                        tie++;
+                    }
+                }
+            }
+
+            if (hasMatch == 1 && tie != 0) {
                 System.out.println("Player 1 wins!");
 
                 System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
@@ -76,7 +85,7 @@ public class PvP {
                 System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
-            } else if (hasMatch == 2) {
+            } else if (hasMatch == 2 && tie != 0) {
                 System.out.println("Player 2 wins!");
 
                 System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
@@ -84,12 +93,20 @@ public class PvP {
                 System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
-            } else {
+            } else if (hasMatch == 0 && tie != 0) {
                 if (order) {
                     order = false;
                 } else {
                     order = true;
                 }
+            } else if (tie == 1) {
+                System.out.println("Tie Game!");
+
+                System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+                System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+                System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
+
+                looping = false;
             }
         }
     }

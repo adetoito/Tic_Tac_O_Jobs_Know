@@ -28,6 +28,7 @@ public class Match {
                 break;
             }
         }
+
         if (match == 0) { //2
             if (board[0][0].equals(board[0][1]) && board[0][1].equals(board[0][2])) {
                 if (board[0][0].equals("X")) {
