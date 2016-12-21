@@ -13,7 +13,7 @@ public class unnecessaryMusic {
         AudioStream stream;
         InputStream input;
         try {
-            input = new FileInputStream("Lazytown - We Are Number One.wav");
+            input = new FileInputStream("Machinimasound - Escape from the Temple.wav");
             stream = new AudioStream(input);
             player.start(stream);
         } catch (Exception ex) {
