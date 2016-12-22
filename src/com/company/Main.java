@@ -14,7 +14,7 @@ public class Main {
 
         while (action) {
             System.out.println("What mode would you like to play?");
-            System.out.println("(1) Player vs Player\n(2) Player vs Computer");
+            System.out.println("(1) Player vs Player\n(2) Player vs Computer\n");
             try {
                 mode = sc.nextInt();
                 if (mode == 1 || mode == 2) {
@@ -30,8 +30,6 @@ public class Main {
 
         if (mode == 2) {
             action = true;
-        } else {
-            yourTurn = true;
         }
 
         while (action) {
@@ -47,7 +45,7 @@ public class Main {
         }
 
         if (mode == 1) {
-            PvP.beginGame(yourTurn);
+            PvP.beginGame(true);
         } else {
             PvC.beginGame(yourTurn);
         }
