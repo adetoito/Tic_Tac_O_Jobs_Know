@@ -75,6 +75,7 @@ public class PvP {
                 System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
+                PlayAgain.askPvP();
             } else if (hasMatch == 2 && !tie) {
                 System.out.println("Player 2 wins!\n");
 
@@ -83,6 +84,7 @@ public class PvP {
                 System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
+                PlayAgain.askPvP();
             } else if (hasMatch == 0 && !tie) {
                 if (order) {
                     order = false;
@@ -97,6 +99,7 @@ public class PvP {
                 System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2] + "\n");
 
                 looping = false;
+                PlayAgain.askPvP();
             }
         }
     }
