@@ -7,14 +7,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Welcome to Tic Tac O Jobs Know!\n");
+        System.out.println("Welcome to Tic Tac Toe!\n");
 
         boolean yourTurn = true; boolean action = true;
         int mode = 0;
 
         while (action) {
             System.out.println("What mode would you like to play?");
-            System.out.println("(1) Player vs Player\n(2) Player vs Computer\n");
+            System.out.println("(1) Player vs Player\n(2) Player vs Computer");
             try {
                 mode = sc.nextInt();
                 if (mode == 1 || mode == 2) {
@@ -32,9 +32,11 @@ public class Main {
             action = true;
         }
 
+        Scanner sc2 = new Scanner(System.in);
+
         while (action) {
             System.out.println("Would you like to go first? Yes or No");
-            String response = sc.nextLine().toLowerCase();
+            String response = sc2.nextLine().toLowerCase();
             if (response.equals("yes")) {
                 yourTurn = true; action = false;
             } else if (response.equals("no")) {

@@ -5,11 +5,9 @@ public class Match {
     public static int isMatching (String [][] board) {
         /*
         REFERENCE:
-
         R1: 1 2 3
         R2: 1 2 3
         R3: 1 2 3
-
         COMBOS:
         R1[1/2/3], R2[1/2/3], R3[1/2/3] //COMBO 1
         R1/2/3[1], R1/2/3[2], R1/2/3[3] //COMBO 2
@@ -73,6 +71,26 @@ public class Match {
             }
         }
         return match;
+    }
+
+    public static boolean tieGame (String [][] board) {
+        int increment = 0;
+        for (int j = 0; j < board.length; j++) {
+            for (int k = 0; k < board[j].length; k++) {
+                if (board[j][k].equals("-")) {
+                    increment++;
+                    break;
+                }
+            }
+            if (increment != 0) {
+                break;
+            }
+        }
+        if (increment == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
