@@ -4,7 +4,17 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static /*
+Dear xX dpenne Xx,
+
+HELLO MY FRIENDO!
+This was a lovely learning experience.
+I lost 60,000,000 brain cells in the process of coding this tic tac toe.
+Thank you and have a lovely Easter. ;3
+
+Yours truly, your favorite anarchist,
+Argen Gian Ingal Detoito
+ */ void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to Tic Tac Toe!\n");
@@ -14,10 +24,10 @@ public class Main {
 
         while (action) {
             System.out.println("What mode would you like to play?");
-            System.out.println("(1) Player vs Player\n(2) Player vs Computer");
+            System.out.println("(1) Player vs Player\n(2) Player vs Computer\n(3) Computer vs Computer");
             try {
                 mode = sc.nextInt();
-                if (mode == 1 || mode == 2) {
+                if (mode == 1 || mode == 2 || mode == 3) {
                     action = false;
                 } else {
                     System.out.println("Number inputted is an invalid mode ID.");
@@ -48,8 +58,10 @@ public class Main {
 
         if (mode == 1) {
             PvP.beginGame(true);
-        } else {
+        } else if (mode == 2) {
             PvC.beginGame(yourTurn);
+        } else {
+            CvC.beginGame(true);
         }
     }
 }
