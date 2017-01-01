@@ -14,6 +14,7 @@ Thank you and have a lovely Easter. ;3
 
 Yours truly, your favorite anarchist,
 Argen Gian Ingal Detoito
+
  */ void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -57,10 +58,16 @@ Argen Gian Ingal Detoito
         }
 
         if (mode == 1) {
+            System.out.println("There are 3 Rows and 3 Columns.");
+            System.out.println("Rows 1-3 and Columns 1-3.");
             PvP.beginGame(true);
         } else if (mode == 2) {
+            System.out.println("There are 3 Rows and 3 Columns.");
+            System.out.println("Rows 1-3 and Columns 1-3.");
             PvC.beginGame(yourTurn);
         } else {
+            System.out.println("There are 3 Rows and 3 Columns.");
+            System.out.println("Rows 1-3 and Columns 1-3.");
             CvC.beginGame(true);
         }
     }
