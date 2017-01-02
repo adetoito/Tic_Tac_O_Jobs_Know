@@ -30,12 +30,14 @@ Argen Gian Ingal Detoito
                 mode = sc.nextInt();
                 if (mode == 1 || mode == 2 || mode == 3) {
                     action = false;
+                    sc.next();
                 } else {
                     System.out.println("Number inputted is an invalid mode ID.");
                     System.out.println("Please input a valid mode ID.");
                 }
             } catch (InputMismatchException ime) {
                 System.out.println("Your input was not a number.");
+                sc.next();
             }
         }
 
@@ -72,3 +74,5 @@ Argen Gian Ingal Detoito
         }
     }
 }
+
+

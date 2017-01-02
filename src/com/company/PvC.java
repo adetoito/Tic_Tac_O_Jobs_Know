@@ -116,7 +116,7 @@ public class PvC {
                 boolean tie = Match.tieGame(board);
 
                 if (hasMatch == 1 && !tie) {
-                    System.out.println("Player 1 wins!\n");
+                    System.out.println("You win!\n");
 
                     System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
                     System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
@@ -124,7 +124,7 @@ public class PvC {
 
                     looping = false;
                 } else if (hasMatch == 2 && !tie) {
-                    System.out.println("Player 2 wins!\n");
+                    System.out.println("The computer wins!\n");
 
                     System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
                     System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
