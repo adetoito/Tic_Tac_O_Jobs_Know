@@ -4,18 +4,7 @@ import java.util.*;
 
 public class Main {
 
-    public static /*
-Dear xX dpenne Xx,
-
-HELLO MY FRIENDO!
-This was a lovely learning experience.
-I lost 60,000,000 brain cells in the process of coding this tic tac toe.
-Thank you and have a lovely Easter. ;3
-
-Yours truly, your favorite anarchist,
-Argen Gian Ingal Detoito
-
- */ void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to Tic Tac Toe!\n");
